@@ -19,7 +19,6 @@ export default function Home() {
           <div className="max-w-lg ml-20 bg-orange-400 text-center text-6xl">
             This website is {hello.isFetched ? <div>{hello.data?.greeting}</div> : "loading..."}
           </div>
-
           <div className="max-w-lg mr-20 bg-orange-300 text-center text-6xl">
             This website is {hello.isFetched ? <div>{hello.data?.greeting}</div> : "loading..."}
           </div>
@@ -29,7 +28,6 @@ export default function Home() {
           <div className="max-w-lg ml-20 bg-orange-400 text-center text-6xl">
             This website is {hello.isFetched ? <div>{hello.data?.greeting}</div> : "loading..."}
           </div>
-
           <div className="max-w-lg mr-20 bg-orange-300 text-center text-6xl">
             This website is {hello.isFetched ? <div>{hello.data?.greeting}</div> : "loading..."}
           </div>
