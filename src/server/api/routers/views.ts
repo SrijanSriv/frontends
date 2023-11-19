@@ -11,7 +11,7 @@ export const viewsRouter = createTRPCRouter({
       };
     }),
 
-  getLatest: publicProcedure.query(({ ctx }) => {
+  getViews: publicProcedure.query(({ ctx }) => {
     return ctx.db.views.findMany();
   }),
 });
