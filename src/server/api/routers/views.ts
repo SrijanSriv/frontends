@@ -7,11 +7,13 @@ export const viewsRouter = createTRPCRouter({
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
       return {
-        greeting: `Hello ${input.text}`,
+        greeting: `a ${input.text}`,
       };
     }),
 
-  getViews: publicProcedure.query(({ ctx }) => {
-    return ctx.db.views.findMany();
+  getViews: publicProcedure.input(z.object({creatorId : z.string()})).query(({ ctx, input }) => {
+    return ctx.db.views.findMany({
+        where :{creatorId : input.creatorId}
+      });
   }),
 });
