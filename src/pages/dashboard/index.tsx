@@ -15,7 +15,7 @@ export default function Dashboard() {
                 <Link href={'/'}>FRONTENDS</Link>
             </div>
             <div className="flex">
-            <Link href={'/library'} className="bg-pink-400 border-l-2 border-r-2 border-black pl-5 pr-5 pt-7 text-xl hover:bg-pink-500">LIBRARY</Link>
+            <Link href={'/library'} className="bg-yellow-400 border-l-2 border-r-2 border-black pl-5 pr-5 pt-7 text-xl hover:bg-yellow-500">LIBRARY</Link>
             <Link href={'/create'} className="bg-emerald-400 border-r-2 border-black pl-5 pr-5 pt-7 text-xl hover:bg-emerald-500">CREATE</Link>
                 <div className="flex items-center justify-center bg-green-200 w-16 h-16 mr-2 mt-2 ml-2 rounded-full">
                     <div className="flex items-center justify-center bg-orange-400 w-12 h-12 rounded-full">
@@ -37,7 +37,7 @@ export default function Dashboard() {
                             a lot of junk to see how it behaves when i want it to behave a certain way.</div>
                     </div>
                 )
-            }) : <div>No views yet</div>}
+            }) : <div className="text-center" >Loading Your Views...</div>}
         </div>
         </>
     )
