@@ -1,22 +1,21 @@
 import { UserButton } from "@clerk/nextjs";
-import dynamic from "next/dynamic"
-const TLDrawWithoutSSR = dynamic(
-  () => import("@tldraw/tldraw").then((p) => p.Tldraw),
-  { ssr: false }
-)
-import '@tldraw/tldraw/tldraw.css'
 import Link from "next/link";
 import { useState } from "react";
+import dynamic from "next/dynamic"
+const Playground = dynamic(
+    () => import("~/components/Playground").then((p) => p),
+    { ssr: false }
+)
 
 export default function Library() {
-    const [size, setSize] = useState({dimensions : "h-4/5 w-2/3 mr-3 mt-5", fullscreen : false, icon : "↖️"})
+    const [size, setSize] = useState({dimensions : "h-4/5 w-2/3", fullscreen : false, icon : "↖️"})
 
     const changeSize = () => {
         if (!size.fullscreen) {
             setSize({dimensions : "h-screen w-screen z-50 inset-0", fullscreen : true, icon : "↘️"})
             
         } else {
-            setSize({dimensions : "h-4/5 w-2/3 mr-3 mt-5", fullscreen : false, icon : "↖️"})
+            setSize({dimensions : "h-4/5 w-2/3", fullscreen : false, icon : "↖️"})
         }
     }
 
@@ -49,13 +48,13 @@ export default function Library() {
                     the canvas perhaps
                 </div>
             </div> */}
-            <div className="flex">
+            <div className="flex pt-5">
                 <div>
                     side panel
                 </div>
-                <div className={size.dimensions + ` right-0 fixed bg-white`}>
+                <div className={size.dimensions + ` mr-3 right-0 fixed bg-white pb-9`}>
                     <div onClick={changeSize} className=" hover:cursor-pointer bg-slate-200 max-w-fit pl-3 pr-3 pt-1">{size.icon}</div>
-                    <TLDrawWithoutSSR/>
+                    <Playground/>
                 </div>
             </div>
         </div>

@@ -15,20 +15,8 @@ export default function Home() {
       <main>
         <Navbar/>
 
-        <div className="h-screen pt-40 flex justify-between items-center p-10">
-          <div className="max-w-lg ml-20 bg-orange-400 text-center text-6xl">
-            This website is {hello.isFetched ? <div>{hello.data?.greeting}</div> : "loading..."}
-          </div>
-          <div className="max-w-lg mr-20 bg-orange-300 text-center text-6xl">
-            This website is {hello.isFetched ? <div>{hello.data?.greeting}</div> : "loading..."}
-          </div>
-        </div>
-        
-        <div className="h-screen flex justify-between items-center p-10 bg-blue-300">
-          <div className="max-w-lg ml-20 bg-orange-400 text-center text-6xl">
-            This website is {hello.isFetched ? <div>{hello.data?.greeting}</div> : "loading..."}
-          </div>
-          <div className="max-w-lg mr-20 bg-orange-300 text-center text-6xl">
+        <div className="h-screen w-screen flex items-center justify-center bg-blue-200">
+          <div className="bg-orange-400 text-center text-6xl">
             This website is {hello.isFetched ? <div>{hello.data?.greeting}</div> : "loading..."}
           </div>
         </div>
