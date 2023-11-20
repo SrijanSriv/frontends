@@ -58,7 +58,12 @@ const crc: CRCCalculator<Uint8Array> = (current, previous) => {
 
   // eslint-disable-next-line @typescript-eslint/prefer-for-of
   for (let index = 0; index < current.length; index++) {
-    crc = TABLE[(crc ^ current[index]) & 0xff] ^ (crc >>> 8);
+    const curr_idx = current[index];
+    if (curr_idx === undefined) return crc ^ -1;
+
+    const crc_calc = TABLE[(crc ^ curr_idx) & 0xff]
+    if (crc_calc === undefined) return crc ^ -1;
+    crc = crc_calc ^ (crc >>> 8);
   }
 
   return crc ^ -1;

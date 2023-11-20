@@ -16,9 +16,9 @@ export function PreviewModal({
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
 
   useEffect(() => {
-    const highlight = async () => {
+    const highlight = () => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-      await Prism.highlightAll(); // <--- prepare Prism
+      Prism.highlightAll(); // <--- prepare Prism
     };
     void highlight(); // <--- call the async function
   }, [view, activeTab]); // <--- run when post updates
