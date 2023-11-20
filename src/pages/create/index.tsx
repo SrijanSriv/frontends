@@ -1,5 +1,9 @@
 import { UserButton } from "@clerk/nextjs";
-import { Tldraw } from "@tldraw/tldraw";
+import dynamic from "next/dynamic"
+const TLDrawWithoutSSR = dynamic(
+  () => import("@tldraw/tldraw").then((p) => p.Tldraw),
+  { ssr: false }
+)
 import '@tldraw/tldraw/tldraw.css'
 import Link from "next/link";
 import { useState } from "react";
@@ -51,7 +55,7 @@ export default function Library() {
                 </div>
                 <div className={size.dimensions + ` right-0 fixed bg-white`}>
                     <div onClick={changeSize} className=" hover:cursor-pointer bg-slate-200 max-w-fit pl-3 pr-3 pt-1">{size.icon}</div>
-                    <Tldraw/>
+                    <TLDrawWithoutSSR/>
                 </div>
             </div>
         </div>
