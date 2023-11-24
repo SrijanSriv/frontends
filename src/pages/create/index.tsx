@@ -36,22 +36,21 @@ export default function Library() {
                 </div>
             </div>
 
-            {/* <div className="flex gap-4 bg-slate-300">
-                <div className="flex w-1/4 justify-center border-2 border-black rounded-lg">
-                <form className="">
-                    <label htmlFor="prompt" className="">
-                        <input id="prompt" className="border-2 border-black w-full"/>
-                    </label>
-                </form>
+            <div className="flex pt-5 ">
+                <div className="flex flex-col text-center ml-8 mt-16  w-1/4 h-2/3 fixed border rounded-lg">
+                    <h1 className="text-4xl">CONSOLE</h1>
+
+                    <div>
+                        <button className="border border-red-300">Save ig?</button>
+                        <div className="border border-red-300">More Things</div>
+                    </div>
+                    
+                    <form action="" className="h-10 border-red-300 border">
+                        <input className="bg-transparent border border-black" />
+                        <input type="submit" value={"Submit"} />
+                    </form>
                 </div>
-                <div className="w-3/4 border-2 border-black border-t-0">
-                    the canvas perhaps
-                </div>
-            </div> */}
-            <div className="flex pt-5">
-                <div>
-                    side panel
-                </div>
+
                 <div className={size.dimensions + ` mr-3 right-0 fixed bg-white pb-9`}>
                     <div onClick={changeSize} className=" hover:cursor-pointer bg-slate-200 max-w-fit pl-3 pr-3 pt-1">{size.icon}</div>
                     <Playground/>
